@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  padding-top: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'dis dis dis dis'
+    'AC C divide multiply'
+    'seven eight nine subtract'
+    'four five six add'
+    'one two three equals'
+    'zero zero decimal equals';
+  background: rgba(128, 128, 128, 0.3);
+  box-shadow: 2px 2px 4px black;
+  border-radius: 5px;
+}
+
+.padButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(221, 45, 206);
+  /* border: 1px solid black; */
+  cursor: pointer;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.padButton:hover {
+  /* border: 1px solid white; */
+  text-shadow: 1px 1px 2px rgb(122, 29, 115);
+  box-shadow: 1px 1px 2px rgb(122, 29, 115);
+}
+
+.dis {
+  grid-area: dis;
+  text-align: right;
+  font-size: 20px;
+  background: rgb(215, 101, 238, 0.7);
+  border-radius: 5px;
+}
+
+.dis input {
+  width: 90%;
   color: white;
+  padding: 5px 20px;
+  text-align: right;
+  background: none;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+input::placeholder {
+  color: white;
+  font-weight: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answer {
+  font-weight: 800;
+}
+
+.total {
+  padding: 5px 20px;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#equals {
+  grid-area: equals;
+  background: rgb(221, 45, 206, 0.2);
+  border-radius: 5px;
+}
+
+.operators {
+  background: rgb(221, 45, 206, 0.2);
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+.operators:hover,
+.AC:hover,
+.C:hover {
+  box-shadow: 1px 1px 3px rgb(122, 29, 115);
+}
+
+.AC,
+.C {
+  border-radius: 5px;
+  border: 1px solid rgb(221, 45, 206);
 }
